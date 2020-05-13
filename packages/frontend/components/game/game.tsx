@@ -4,17 +4,15 @@ import TabPane from './tabPane';
 import useGame from './useGame';
 
 interface IGameProps {
-  id: string | string[];
+  gameId: string | string[];
 }
 
-const GameIndex = ({ id }: IGameProps): ReactElement => {
-  const gameID = Number(id);
-
-  useGame(gameID);
+const GameIndex = ({ gameId }: IGameProps): ReactElement => {
+  useGame(gameId);
 
   return (
     <Layout>
-      <div style={{ flex: 1 }}>Game {gameID} Content</div>
+      <div style={{ flex: 1 }}>Game {gameId} Content</div>
       <div style={{ flex: 1, display: 'flex' }}>
         <div style={{ flex: 1, padding: '1rem' }}>
           <TabPane />
